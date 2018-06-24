@@ -24,4 +24,4 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 ```
 
 ### Results
-2 Epochs: loss: .357 | accuracy: .84
+2 Epochs: loss: .357 | accuracy: .8487
