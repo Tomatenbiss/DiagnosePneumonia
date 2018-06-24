@@ -24,10 +24,10 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 ```
 
 ### Results
-image_height = 150
-image_width = 150
-batch_size = 32
+image_height = 150\
+image_width = 150\
+batch_size = 32\
 no_of_epochs  = 2
 
-**loss**: .357
+**loss**: .357\
 **accuracy**: .8487
