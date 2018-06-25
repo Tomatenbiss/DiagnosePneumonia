@@ -39,3 +39,11 @@ no_of_epochs  = 5
 
 **loss**: .2936\
 **accuracy**: .8914
+
+image_height = 150\
+image_width = 150\
+batch_size = 32\
+no_of_epochs  = 10
+
+**loss**: .2606\
+**accuracy**: .9178
