@@ -27,23 +27,21 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 image_height = 150\
 image_width = 150\
 batch_size = 32\
-no_of_epochs  = 2
 
-**loss**: .357\
-**accuracy**: .8487
+no of epochs:   2       5      10     15    20      25      30      35      40      45      50      55
+loss:           .4453   .3881  .3348  .2744 .295    .3088   .2872   .2996   .2926   .2977   .3013   .3017
+accuracy:       .8207   .8355  .8898  .9112 .9145   .9079   .9145   .9128   .9128   .9128   .9128   .9112
 
-image_height = 150\
-image_width = 150\
-batch_size = 32\
-no_of_epochs  = 5
+no of epochs:   60      65      70      75      80      85      90      95      100     105     110     115
+loss:           .2986   .2950   .2956   .2944   .3065   .2883   .2978   .3008   .3094   .2961   .3028   .3009
+accuracy:       .9145   .9112   .9128   .9112   .9095   .9145   .9112   .9112   .9062   .9128   .9095   .9112
 
-**loss**: .2936\
-**accuracy**: .8914
+no of epochs:   120     125     130     135     140     145     150     155     160     165     170     175
+loss:           .2984   .2990   .3017   .2977   .3002   .3037   .2940   .2977   .3095   .3011   .2983   .2886
+accuracy:       .9128   .9128   .9145   .9194   .9145   .9145   .9194   .9178   .9112   .9128   .9194   .9211
 
-image_height = 150\
-image_width = 150\
-batch_size = 32\
-no_of_epochs  = 10
+no of epochs:   180     185     190     195     200     205     210     215     220     225     230     235
+loss:           .3052   .2976   .3159   .31     .2992   .3136   .2987   .3056   .3108   .3063   .2892   
+accuracy:       .9178   .9211   .9128   .9128   .9178   .9128   .9145   .9145   .9128   .9194   .9227
 
-**loss**: .2606\
-**accuracy**: .9178
+### Setting with dropout layers reduced to one with a dropout rate of .5
