@@ -2,6 +2,11 @@
 
 ## Original Setting
 
+image_height = 150
+image_width = 150
+batch_size = 32
+no_of_epochs  = 300
+
 ```
 model = Sequential()
 model.add(Conv2D(64,(3,3),input_shape=(image_height,image_width,3),activation='relu'))
@@ -44,4 +49,9 @@ no of epochs:   180     185     190     195     200     205     210     215     
 loss:           .3052   .2976   .3159   .31     .2992   .3136   .2987   .3056   .3108   .3063   .2892   
 accuracy:       .9178   .9211   .9128   .9128   .9178   .9128   .9145   .9145   .9128   .9194   .9227
 
-### Setting with dropout layers reduced to one with a dropout rate of .5
+### Setting with dropout layers reduced to one with a dropout rate
+
+image_height = 150
+image_width = 150
+batch_size = 32
+no_of_epochs  = 300
