@@ -55,3 +55,31 @@ image_height = 150
 image_width = 150
 batch_size = 32
 no_of_epochs  = 300
+
+### Paper implementation with no dropout
+
+image_height = 32
+image_width = 32
+batch_size = 32
+no_of_epochs  = 300
+
+model = Sequential()
+model.add(Conv2D(16,(2,2),input_shape=(image_height,image_width,3),activation='linear'))
+model.add(LeakyReLU(alpha=.3))
+model.add(Conv2D(36,(2,2),activation='linear'))
+model.add(LeakyReLU(alpha=.3))
+model.add(Conv2D(64,(2,2),activation='linear'))
+model.add(LeakyReLU(alpha=.3))
+model.add(Conv2D(100,(2,2),activation='linear'))
+model.add(LeakyReLU(alpha=.3))
+model.add(Conv2D(144,(2,2),activation='linear'))
+model.add(LeakyReLU(alpha=.3))
+model.add(AveragePooling2D(pool_size=(27,27)))
+model.add(Flatten())
+model.add(Dense(units=864,activation='relu'))
+model.add(Dense(units=288,activation='relu'))
+model.add(Dense(units=1,activation='sigmoid'))
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+### Paper implementation with dropout (.5) before first Dense layer
+
