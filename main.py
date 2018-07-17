@@ -66,12 +66,12 @@ model.add(Conv2D(144,(2,2),activation='linear'))
 model.add(LeakyReLU(alpha=.3))
 model.add(AveragePooling2D(pool_size=(27,27)))
 model.add(Flatten())
-#model.add(Dropout(0.5))
+model.add(Dropout(0.5))
 model.add(Dense(units=864,activation='relu'))
 model.add(Dense(units=288,activation='relu'))
 #model.add(Dense(units=7,activation='softmax'))
 model.add(Dense(units=1,activation='sigmoid'))
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']) #precision/recall AUC, ROC, R2-Score, F-Score
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
 model.summary()
 
