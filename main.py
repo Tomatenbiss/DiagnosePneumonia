@@ -54,22 +54,15 @@ no_of_epochs  = 300
 # model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']) #precision/recall AUC, ROC, R2-Score, F-Score
 
 model = Sequential()
-model.add(Conv2D(16,(2,2),input_shape=(image_height,image_width,3),activation='linear'))
-model.add(LeakyReLU(alpha=.3))
-model.add(Conv2D(36,(2,2),activation='linear'))
-model.add(LeakyReLU(alpha=.3))
-model.add(Conv2D(64,(2,2),activation='linear'))
-model.add(LeakyReLU(alpha=.3))
-model.add(Conv2D(100,(2,2),activation='linear'))
-model.add(LeakyReLU(alpha=.3))
-model.add(Conv2D(144,(2,2),activation='linear'))
-model.add(LeakyReLU(alpha=.3))
-model.add(AveragePooling2D(pool_size=(27,27)))
-model.add(Flatten())
+model.add(Conv2D(64,(2,2),input_shape=(image_height,image_width,3),activation='relu'))
+model.add(Conv2D(32,(3,3),activation='relu'))
+model.add(Conv2D(16,(3,3),activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(units=864,activation='relu'))
-model.add(Dense(units=288,activation='relu'))
-#model.add(Dense(units=7,activation='softmax'))
+model.add(Conv2D(8,(3,3),activation='relu'))
+model.add(MaxPooling2D(pool_size=(2,2)))
+model.add(Conv2D(8,(3,3),activation='relu'))
+model.add(Flatten())
+model.add(Dense(units=361*8,activation='relu'))
 model.add(Dense(units=1,activation='sigmoid'))
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
@@ -109,4 +102,4 @@ history = model.fit_generator(training_set,
                     callbacks=callbacks
                    )
 
-model.save('paper_implementation.dat')
+model.save('own_architecture_with_dropout.dat')
